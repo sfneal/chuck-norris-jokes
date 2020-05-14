@@ -26,6 +26,6 @@ class JokeFactoryTest extends TestCase
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertSame("No one has ever pair-programmed with Chuck Norris and lived to tell about it.", $joke);
+        $this->assertSame('No one has ever pair-programmed with Chuck Norris and lived to tell about it.', $joke);
     }
 }

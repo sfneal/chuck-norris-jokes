@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 class JokeFactory
 {
     /**
-     * Chuck Norris Jokes api endpoint
+     * Chuck Norris Jokes api endpoint.
      */
     private const API_ENDPOINT = 'https://api.icndb.com/jokes/random';
 
@@ -31,6 +31,7 @@ class JokeFactory
         $response = $this->client->get(self::API_ENDPOINT);
 
         $joke = json_decode($response->getBody()->getContents());
+
         return $joke->value->joke;
     }
 }
