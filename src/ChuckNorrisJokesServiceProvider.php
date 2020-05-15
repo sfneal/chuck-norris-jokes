@@ -9,11 +9,9 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                ChuckNorrisJoke::class
-            ]);
-        }
+        $this->commands([
+            ChuckNorrisJoke::class
+        ]);
     }
 
     public function register()
