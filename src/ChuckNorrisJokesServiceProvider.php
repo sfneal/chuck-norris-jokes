@@ -10,7 +10,7 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->commands([
-            ChuckNorrisJoke::class
+            ChuckNorrisJoke::class,
         ]);
     }
 

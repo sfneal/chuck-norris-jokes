@@ -2,7 +2,6 @@
 
 namespace Sfneal\ChuckNorrisJokes\Console;
 
-
 use Illuminate\Console\Command;
 use Sfneal\ChuckNorrisJokes\Facades\ChuckNorris;
 
