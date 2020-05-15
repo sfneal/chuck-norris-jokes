@@ -18,6 +18,16 @@
         "phpunit/phpunit": "^9.1",
         "orchestra/testbench": "~3.0"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sneal\\ChuckNorrisJokes\\ChuckNorrisJokesServiceProvider"
+            ],
+            "aliases": {
+                "ChuckNorris": "Sneal\\ChuckNorrisJokes\\Facades\\ChuckNorris"
+            }
+        }
+    },
     "autoload": {
         "psr-4": {
             "Sfneal\\ChuckNorrisJokes\\": "src/"
