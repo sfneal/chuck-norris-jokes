@@ -1,6 +1,6 @@
 <?php
 
-namespace Sfneal\ChuckNorrisJokes;
+namespace Sfneal\ChuckNorrisJokes\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
