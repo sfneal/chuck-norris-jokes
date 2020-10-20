@@ -7,7 +7,7 @@ use Sfneal\ChuckNorrisJokes\Facades\ChuckNorris;
 class ChuckNorrisController
 {
     /**
-     * Retrieve a random joke
+     * Retrieve a random joke.
      *
      * @return string
      */
