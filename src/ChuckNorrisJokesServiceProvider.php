@@ -19,11 +19,11 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
         }
 
         // Load Views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'chuck-norris');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'chuck-norris');
 
         // Publish Views
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris')
+            __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris'),
         ]);
 
         // Declare Routes
