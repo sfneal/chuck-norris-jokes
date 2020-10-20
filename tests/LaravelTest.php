@@ -43,4 +43,16 @@ class LaravelTest extends TestCase
         // Assert command output is 'some joke'
         $this->assertSame('some joke'.PHP_EOL, $output);
     }
+
+    /** @test */
+    public function the_route_can_be_accessed()
+    {
+        // Facade should return 'some joke' instead of an actual random joke
+        ChuckNorris::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('some joke');
+
+        $this->get('/chuck-norris')
+            ->assertStatus(200);
+    }
 }
