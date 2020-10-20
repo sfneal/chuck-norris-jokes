@@ -19,16 +19,16 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
         }
 
         // Load Views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'chuck-norris');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'chuck-norris');
 
         // Publish Views
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris')
+            __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris'),
         ], 'views');
 
         // Publish config file
         $this->publishes([
-            __DIR__.'/../config/chuck-norris.php' => base_path('config/chuck-norris.php')
+            __DIR__.'/../config/chuck-norris.php' => base_path('config/chuck-norris.php'),
         ], 'config');
 
         // Publish migration file (if not already published)
