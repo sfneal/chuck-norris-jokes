@@ -46,7 +46,7 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Register service provider in Laravel IoC container
+        // Register Facade as a ServiceProvider
         $this->app->bind('chuck-norris', function () {
             return new JokeFactory();
         });
