@@ -18,7 +18,7 @@ class ChuckNorrisJoke extends Command
     protected $description = 'Output a funny Chuck Norris Joke';
 
     /**
-     * Execute the command
+     * Execute the command.
      *
      * @return void
      */
