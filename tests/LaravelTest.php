@@ -51,6 +51,7 @@ class LaravelTest extends TestCase
             ->once()
             ->andReturn('some joke');
 
+        // Get request the route
         $this->get('/chuck-norris')
             ->assertStatus(200);
     }
