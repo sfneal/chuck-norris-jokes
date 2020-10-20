@@ -15,7 +15,7 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.1",
+        "phpunit/phpunit": "^7.5",
         "orchestra/testbench": "~3.0"
     },
     "extra": {
@@ -30,12 +30,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Sfneal\\ChuckNorrisJokes\\": "src/"
+            "Sfneal\\ChuckNorrisJokes\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sfneal\\ChuckNorrisJokes\\Tests\\": "tests/"
+            "Sfneal\\ChuckNorrisJokes\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
     }
 }

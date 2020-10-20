@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 use Orchestra\Testbench\TestCase;
 use Sfneal\ChuckNorrisJokes\ChuckNorrisJokesServiceProvider;
 use Sfneal\ChuckNorrisJokes\Console\ChuckNorrisJoke;
+use Sfneal\ChuckNorrisJokes\Facades\ChuckNorris;
 
 class LaravelTest extends TestCase
 {
@@ -23,12 +24,23 @@ class LaravelTest extends TestCase
     }
 
     /** @test */
-    public function the_console_command_return_a_joke()
+    public function test_the_console_command_return_a_joke()
     {
+        // Dont output artisan command
+        $this->withoutMockingConsoleOutput();
+
+        // Facade should return 'some joke' instead of an actual random joke
+        ChuckNorris::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('some joke');
+
+        // Call artisan command
         $this->artisan('chuck-norris');
 
+        // Retrieve command output
         $output = Artisan::output();
 
-        $this->assertSame('some joke', $output);
+        // Assert command output is 'some joke'
+        $this->assertSame('some joke'.PHP_EOL, $output);
     }
 }
