@@ -18,6 +18,14 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
             ]);
         }
 
+        // Load Views
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'chuck-norris');
+
+        // Publish Views
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris')
+        ]);
+
         // Declare Routes
         Route::get('chuck-norris', ChuckNorrisController::class);
     }
