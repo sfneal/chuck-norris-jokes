@@ -2,7 +2,6 @@
 
 namespace Sfneal\ChuckNorrisJokes\Tests;
 
-
 use Illuminate\Support\Facades\Artisan;
 use Orchestra\Testbench\TestCase;
 use Sfneal\ChuckNorrisJokes\ChuckNorrisJokesServiceProvider;
@@ -19,7 +18,7 @@ class LaravelTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'ChuckNorris' => ChuckNorrisJoke::class
+            'ChuckNorris' => ChuckNorrisJoke::class,
         ];
     }
 
