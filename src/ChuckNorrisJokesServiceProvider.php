@@ -24,16 +24,25 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
         // Publish Views
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/chuck-norris')
-        ]);
+        ], 'views');
+
+        // Publish config file
+        $this->publishes([
+            __DIR__.'/../config/chuck-norris.php' => base_path('config/chuck-norris.php')
+        ], 'config');
 
         // Declare Routes
-        Route::get('chuck-norris', ChuckNorrisController::class);
+        Route::get(config('chuck-norris.route'), ChuckNorrisController::class);
     }
 
     public function register()
     {
+        // Register service provider in Laravel IoC container
         $this->app->bind('chuck-norris', function () {
             return new JokeFactory();
         });
+
+        // Load config file
+        $this->mergeConfigFrom(__DIR__.'/../config/chuck-norris.php', 'chuck-norris');
     }
 }
