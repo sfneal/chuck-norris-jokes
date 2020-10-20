@@ -53,6 +53,8 @@ class LaravelTest extends TestCase
 
         // Get request the route
         $this->get('/chuck-norris')
+            ->assertViewIs('chuck-norris::joke')
+            ->assertViewHas('joke', 'some joke')
             ->assertStatus(200);
     }
 }
